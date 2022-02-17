@@ -37,7 +37,19 @@ app.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`);
 
 
-	// CÓDIGO PARA ATENDER OS REQUERIMENTOS
-	// R01, R02, R03, R04, R05
+	const readlineSync  = require ('readline-Sync') ;
+	const req1 = readlineSync.question('Ola gostaria de saber quantos alunos tem na lista');
+		console.log('Na lista tem 3 nomes');
+
+	const req2 = readlineSync.question ('Qual o nome deles e suas notas?');
+	const listaDeAlunos = ['Andre nota: 9', 'Joice, nota: 10', 'Lucas, nota 8']
+		console.log(listaDeAlunos[0]);
+		console.log(listaDeAlunos[1]);
+		console.log(listaDeAlunos[2]);
+
+
+	const req3 = readlineSync.question ('Qual aluno mais se destacou?');
+	const melhorNota = ['Andre nota: 9', 'Joice, nota: 10', 'Lucas, nota: 8']
+		console.log(melhorNota[1]);
 	
 });
