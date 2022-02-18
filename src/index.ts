@@ -38,21 +38,26 @@ app.listen(PORT, () => {
 
 
 	const readlineSync  = require ('readline-Sync') ;
-	const req1 = readlineSync.question('Ola gostaria de saber quantos alunos tem na lista?');
-		console.log('Na lista tem 3 nomes');
+	const req1 = readlineSync.question('Ola, gostaria de saber quantos alunos tem na lista esse ano?');
+	
+	let listaDeAlunos = ['Andre', 'Joice', 'Lucas'];
+		for (let i = 0; i <= 2; i++) {
+			console.log(`i=${listaDeAlunos[i]}`)
+		}
+			console.log('Na lista tem 3 nomes');
 
-	const req2 = readlineSync.question ('Qual o nome deles e suas notas?');
-	const listaDeAlunos = ['Andre nota: 9', 'Joice, nota: 10', 'Lucas, nota: 8']
-		console.log(listaDeAlunos)
+	const req2 = readlineSync.question ('Quais foram suas notas?');
+	let listaDeAlunos1 = ['Andre nota: 9', 'Joice, nota: 10', 'Lucas, nota: 8']
+		console.log(listaDeAlunos1)
 
 
 	const req3 = readlineSync.question ('Qual aluno mais se destacou?');
-	const melhorNota = [
-		{ nome: 'Andre', nota: '9'},
-		{ nome:'Joice', nota: '10'},
-		{ nome:'Lucas', nota: '8'}
+	let melhorNota = [
+		{ nome: 'Andre', nota: 9},
+		{ nome:'Joice', nota: 10},
+		{ nome:'Lucas', nota: 8}
 	]
-		const filtrarNota = (melhorNota: { nota: number; }) => melhorNota.nota>=10 
-			console.log(melhorNota.filter(filtrarNota))
+		let nota = (m: { nota: number; }) => m.nota >= 10
+		console.log(melhorNota.filter(nota))
 	
 });
