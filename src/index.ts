@@ -61,22 +61,15 @@ app.listen(PORT, () => {
 
 	if (nota1 > maior){
 		maior = nota1
-	}else if (nota1 < menor){
-		menor = nota1
 	}
 	if (nota2 > maior){
 		maior = nota2
-	}else if (nota2 < menor){
-		menor = nota2
 	}
 
 	if (nota3 > maior){
 		maior = nota3
-	}else if (nota3 < menor){
-		menor = nota3
 	}	
 	
-	
-	console.log('Aluno com maior foi do aluno: '+nome3+', '+'com a nota: '+maior)
+	console.log('Aluno com maior foi do aluno: '+pergunta3+' com a nota: '+maior)
 		
 });
