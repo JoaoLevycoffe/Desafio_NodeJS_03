@@ -46,30 +46,25 @@ app.listen(PORT, () => {
 
 //R02
 
-	const nota1 = readlineSync.question('Poderia informar a nota do aluno '+nome1+'?: ')
-	const nota2  = readlineSync.question(nome2+': ')
-	const nota3 = readlineSync.question(nome3+': ')
-
+	const nota1 = parseInt(readlineSync.question('Poderia informar a nota do aluno '+nome1+'?: '))
+	const nota2  = parseInt(readlineSync.question(nome2+': '))
+	const nota3 = parseInt(readlineSync.question(nome3+': '))
 
 //R03
 
-	const pergunta3 = readlineSync.question ('Deseja exibir aluno que obteve maior nota?: ')
-
-
 	let maior = nota1
-	let menor = nota1
+	let nomeMaior = nome1
 
-	if (nota1 > maior){
-		maior = nota1
-	}
 	if (nota2 > maior){
 		maior = nota2
+		nomeMaior = nome2
 	}
 
 	if (nota3 > maior){
 		maior = nota3
+		nomeMaior = nome3
 	}	
 	
-	console.log('Aluno com maior foi do aluno: '+pergunta3+' com a nota: '+maior)
+	console.log('Aluno com maior foi do aluno: '+nomeMaior+' com a nota: '+maior)
 		
 });
