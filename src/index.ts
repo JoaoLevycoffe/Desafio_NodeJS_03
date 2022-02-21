@@ -6,6 +6,7 @@ import * as dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import { NOMEM } from "dns";
 
 dotenv.config();
 
@@ -36,28 +37,46 @@ app.use(express.json());
 app.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`);
 
+//R01
 
-	const readlineSync  = require ('readline-Sync') ;
-	const req1 = readlineSync.question('Ola, gostaria de saber quantos alunos tem na lista esse ano?');
+	const readlineSync  = require ('readline-Sync') 
+	const nome1 = readlineSync.question('Ola, pode informar os nomes dos aprovados?: ')
+	const nome2 = readlineSync.question('Proximo?: ')
+	const nome3 = readlineSync.question('Proximo?: ')
+
+//R02
+
+	const nota1 = readlineSync.question('Poderia informar a nota do aluno '+nome1+'?: ')
+	const nota2  = readlineSync.question(nome2+': ')
+	const nota3 = readlineSync.question(nome3+': ')
+
+
+//R03
+
+	const pergunta3 = readlineSync.question ('Deseja exibir aluno que obteve maior nota?: ')
+
+
+	let maior = nota1
+	let menor = nota1
+
+	if (nota1 > maior){
+		maior = nota1
+	}else if (nota1 < menor){
+		menor = nota1
+	}
+	if (nota2 > maior){
+		maior = nota2
+	}else if (nota2 < menor){
+		menor = nota2
+	}
+
+	if (nota3 > maior){
+		maior = nota3
+	}else if (nota3 < menor){
+		menor = nota3
+	}	
 	
-	let listaDeAlunos = ['Andre', 'Joice', 'Lucas'];
-		for (let i = 0; i <= 2; i++) {
-			console.log(`i=${listaDeAlunos[i]}`)
-		}
-			console.log('Na lista tem 3 nomes');
-
-	const req2 = readlineSync.question ('Quais foram suas notas?');
-	let listaDeAlunos1 = ['Andre nota: 9', 'Joice, nota: 10', 'Lucas, nota: 8']
-		console.log(listaDeAlunos1)
-
-
-	const req3 = readlineSync.question ('Qual aluno mais se destacou?');
-	let melhorNota = [
-		{ nome: 'Andre', nota: 9},
-		{ nome:'Joice', nota: 10},
-		{ nome:'Lucas', nota: 8}
-	]
-		let nota = (m: { nota: number; }) => m.nota >= 10
-		console.log(melhorNota.filter(nota))
 	
+	console.log('Aluno com maior foi do aluno: '+nome3+', '+'com a nota: '+maior)
+		
 });
